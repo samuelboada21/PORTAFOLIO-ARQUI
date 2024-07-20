@@ -1,13 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Inicio from "../pages/Inicio";
+import Page from "../container/Page";
+import PageNotFound from "../pages/PageNotFound"
+import Nosotros from "../pages/Nosotros"
 
 export default function first() {
   return <>
     <Router>
-        <Navbar/>
-        <Footer/>
         <Routes>
+          <Route path="/" element={<Page componente={<Inicio/>}/>}/>
+          <Route path="/nosotros" element={<Page componente={<Nosotros/>}/>}/>
+          <Route path="/*" element={<Page componente={<PageNotFound/>}/>}/>
         </Routes>
     </Router>
   </>;

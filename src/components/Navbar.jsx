@@ -3,7 +3,6 @@ import {
   Image,
   Link,
   Box,
-  IconButton,
   useMediaQuery,
   useDisclosure,
   Drawer,
@@ -16,91 +15,127 @@ import {
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaBars } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
+import IconButtonReusable from "./IconButtonReusable";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const [w] = useMediaQuery("(min-width: 900px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
+  const whatsappNumber = "573204663151";
+
+  const socialLinks = [
+    {
+      icon: <FaFacebook />,
+      href: "https://www.facebook.com/profile.php?id=100092853669268&mibextid=ZbWKwL",
+      colorHover: "blue",
+    },
+    {
+      icon: <RiWhatsappFill size="20px" />,
+      href: `https://wa.me/${whatsappNumber}`,
+      colorHover: "green.500",
+    },
+    {
+      icon: <FaInstagram size="18px" />,
+      href: "https://www.instagram.com/swag_arquitectos/",
+      colorHover: "pink.400",
+    },
+  ];
 
   return (
     <Flex
       position="fixed"
       width="100%"
-      bg="#1E1D1D"
+      backdropFilter="blur(2px)"
+      bg="rgba(30,29,29,0.9)"
       padding="36px"
       shadow="0px 0px 10px rgba(0,0,0,1)"
       justifyContent="space-between"
       alignItems="center"
+      maxH={w ? "110px" : "130px"}
       zIndex="11"
     >
       <Flex direction="column">
-        <Image src="/HOR_WHITE.png" alt="Logo" w="120px" />
+        <Link href="/">
+          <Image src="/HOR_WHITE.png" alt="Logo" w="120px" />
+        </Link>
         {!w && (
           <Box mt={2}>
-            <IconButton
-              bg={"none"}
-              _hover={{ color: "blue" }}
-              icon={<FaFacebook />}
-              onClick={() => window.open("https://www.facebook.com", "_blank")}
-            />
-            <IconButton
-              bg={"none"}
-              _hover={{ color: "green.500" }}
-              icon={<RiWhatsappFill size="20px" />}
-              onClick={() => window.open("https://www.facebook.com", "_blank")}
-            />
-            <IconButton
-              bg={"none"}
-              _hover={{ color: "pink.400" }}
-              icon={<FaInstagram size="18px" />}
-              onClick={() => window.open("https://www.facebook.com", "_blank")}
-            />
+            {socialLinks.map((link, index) => (
+              <IconButtonReusable
+                key={index}
+                icon={link.icon}
+                href={link.href}
+                colorHover={link.colorHover}
+              />
+            ))}
           </Box>
         )}
       </Flex>
 
       {w ? (
         <Box textAlign="center" alignContent={"center"}>
-          <Link href="/inicio" m="0px 10px" color="white">
+          <Link
+            href="/"
+            m="0px 10px"
+            textDecoration={location.pathname === "/" ? "underline" : "none"}
+          >
             Inicio
           </Link>
-          <Link href="/servicios" m="0px 10px" color="white">
+          <Link
+            href="/servicios"
+            m="0px 10px"
+            color="white"
+            textDecoration={
+              location.pathname === "/servicios" ? "underline" : "none"
+            }
+          >
             Servicios
           </Link>
-          <Link href="/portafolio" m="0px 10px" color="white">
+          <Link
+            href="/portafolio"
+            m="0px 10px"
+            color="white"
+            textDecoration={
+              location.pathname === "/portafolio" ? "underline" : "none"
+            }
+          >
             Portafolio
           </Link>
-          <Link href="/contacto" m="0px 10px" color="white">
+          <Link
+            href="/nosotros"
+            m="0px 10px"
+            textDecoration={location.pathname === "/nosotros" ? "underline" : "none"}
+          >
+            Nosotros
+          </Link>
+          <Link
+            href="/contacto"
+            m="0px 10px"
+            color="white"
+            textDecoration={
+              location.pathname === "/contacto" ? "underline" : "none"
+            }
+          >
             Contacto
           </Link>
         </Box>
       ) : (
-        <>
-          <Button bg="transparent" onClick={onOpen}>
-            <Icon as={FaBars} fontSize="20px" color="white"></Icon>
-          </Button>
-        </>
+        <Button bg="transparent" onClick={onOpen} _hover="none" _active="none">
+          <Icon as={FaBars} fontSize="20px" color="white"></Icon>
+        </Button>
       )}
 
       {w && (
         <Box>
-          <IconButton
-            bg={"none"}
-            _hover={{ color: "blue" }}
-            icon={<FaFacebook />}
-            onClick={() => window.open("https://www.facebook.com", "_blank")}
-          />
-          <IconButton
-            bg={"none"}
-            _hover={{ color: "green.500" }}
-            icon={<RiWhatsappFill size="20px" />}
-            onClick={() => window.open("https://www.facebook.com", "_blank")}
-          />
-          <IconButton
-            bg={"none"}
-            _hover={{ color: "pink.400" }}
-            icon={<FaInstagram size="18px" />}
-            onClick={() => window.open("https://www.facebook.com", "_blank")}
-          />
+          {socialLinks.map((link, index) => (
+            <IconButtonReusable
+              key={index}
+              icon={link.icon}
+              href={link.href}
+              colorHover={link.colorHover}
+            />
+          ))}
         </Box>
       )}
 
@@ -111,7 +146,7 @@ function Navbar() {
             <DrawerBody>
               <Flex direction="column" textAlign="center">
                 <Link
-                  href="/inicio"
+                  href="/"
                   mb="10px"
                   p="3px"
                   display="block"
