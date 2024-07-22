@@ -6,8 +6,13 @@ import {
   Grid,
   GridItem,
   useMediaQuery,
+  Link,
+  Button,
 } from "@chakra-ui/react";
 import Servicios from "../components/Servicios";
+import { FaPhone, FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
 
 const serviciosData = [
   {
@@ -42,7 +47,7 @@ export default function Nosotros() {
         p="30px"
       >
         <Image
-          src="./nosotros/Nosotros1.png"
+          src="./RENDERS/ZONA TVs/zt1.png"
           alt="Fondo"
           position="absolute"
           top="0"
@@ -50,12 +55,11 @@ export default function Nosotros() {
           width="100%"
           height="100%"
           objectFit="cover"
-          zIndex={0}
         />
         <Box
           w={["100%", "70%", "60%", "50%"]}
-          borderRadius="lg"
-          bgColor="rgba(255, 255, 255, 0.4)"
+          borderRadius="15px 50px"
+          bgColor="rgba(255, 255, 255, 0.6)"
           boxShadow="md"
           p={6}
           mt="100px"
@@ -91,7 +95,6 @@ export default function Nosotros() {
         display="flex"
         justifyContent="center"
         width="100%"
-        // bgGradient="linear(to-b, #1E1D1D 50%, #535353 50%)"
       >
         <Box
           position="absolute"
@@ -101,7 +104,10 @@ export default function Nosotros() {
           width="4px"
           backgroundColor="#FFF"
         />
-        <Box w={["200px", "300px", "500px", "700px", "800px"]}>
+        <Box
+          w={["200px", "300px", "500px", "700px", "800px"]}
+          textAlign={{ base: "left", sm: "center" }}
+        >
           <Text
             fontSize={["xl", "2xl", "3xl", "4xl"]}
             fontWeight="bold"
@@ -124,115 +130,251 @@ export default function Nosotros() {
             justifyContent={"center"}
             flexDirection={"column"}
             mt="50px"
+            pb="100px"
           >
             <Grid
-              templateColumns={w ? "repeat(4,1fr)" : "repeat(2,1fr)"}
+              templateColumns={w ? "repeat(3,1fr)" : "repeat(2,1fr)"}
               gap={4}
             >
               {w ? (
                 <>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-1"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/D5R.png"
                       alt="Logo"
-                      w="120px"
+                      w="130px"
                     />
                   </GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-2"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/ENSCAPE.png"
                       alt="Logo"
                       w="120px"
                     />
                   </GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-3"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/LUMION.png"
                       alt="Logo"
-                      w="120px"
+                      w="60px"
                     />
                   </GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-4"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/TWIMO.png"
                       alt="Logo"
-                      w="120px"
+                      w="130px"
+                    />
+                  </GridItem>
+                  <GridItem rowSpan={1} colSpan={1}></GridItem>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <Image
+                      className="image image-animate image-5"
+                      src="./motores/VRAY.png"
+                      alt="Logo"
+                      w="110px"
                     />
                   </GridItem>
                 </>
               ) : (
                 <>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-1"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/D5R.png"
                       alt="Logo"
-                      w="120px"
+                      w="130px"
                     />
                   </GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-2"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/ENSCAPE.png"
                       alt="Logo"
                       w="120px"
                     />
                   </GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-3"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/LUMION.png"
                       alt="Logo"
-                      w="120px"
+                      w={["40px", "65px"]}
                     />
                   </GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
                   <GridItem rowSpan={1} colSpan={1}></GridItem>
-                  <GridItem rowSpan={1} colSpan={1}>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       className="image image-animate image-4"
-                      src="./publico/HOR_WHITE.png"
+                      src="./motores/TWIMO.png"
                       alt="Logo"
-                      w="120px"
+                      w="130px"
+                    />
+                  </GridItem>
+                  <GridItem
+                    rowSpan={1}
+                    colSpan={1}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <Image
+                      className="image image-animate image-5"
+                      src="./motores/VRAY.png"
+                      alt="Logo"
+                      w="110px"
                     />
                   </GridItem>
                 </>
               )}
             </Grid>
-            <Text
-              fontSize={["xl", "2xl", "3xl", "3xl"]}
-              fontWeight="bold"
-              pt="70px"
-            >
-              Herramientas
-            </Text>
-            <Text fontSize={{ base: "sm", sm: "lg" }} pt="10px" pl="20px">
-              D5 RENDER
-            </Text>
-            <Text fontSize={{ base: "sm", sm: "lg" }} pt="10px" pl="20px">
-              LUMINION
-            </Text>
-            <Text fontSize={{ base: "sm", sm: "lg" }} pt="10px" pl="20px">
-              TWINMOTION
-            </Text>
-            <Text fontSize={{ base: "sm", sm: "lg" }} pt="10px" pl="20px" mb="30px">
-              V-RAY
-            </Text>
           </Box>
         </Box>
       </Box>
+      {/* Parte 3 Servicios*/}
       <Box bg="#4D4D4D" p="2px 0px 20px 0px">
-        <Servicios servicios={serviciosData} />
+        <Flex direction={"column"}>
+          <Servicios servicios={serviciosData} />
+          <Button className="service-image" mx="auto" w="100px" mb="40px">
+            <Link _hover="none" href="/servicios">
+              Servicios
+            </Link>
+          </Button>
+        </Flex>
+      </Box>
+      {/* Parte 4 Arquitectos*/}
+      <Box
+        bg="#1E1D1D"
+        p="2px 0px 20px 0px"
+        maxW="1000px"
+        mx="auto"
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }}
+        // justifyContent="center"
+        // textAlign="center" // Centra el texto dentro de los boxes
+      >
+        <Box flex="1" boxShadow="md" p={4} m={10}>
+          <Image
+            src="./publico/Logo.png"
+            borderRadius="md"
+            mb="40px"
+            objectFit="contain"
+            // height="100px"
+            width="170px"
+            mx="auto"
+            className="service-image"
+          />
+          <Text display={"flex"} alignItems={"center"}>
+            <FaUserCircle style={{ marginRight: "8px" }} />
+            <strong>ARQ:</strong> FERNANDO GUERRERO
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <FaLocationDot style={{ marginRight: "8px" }} />
+            Cúcuta, Colombia
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <FaPhone style={{ marginRight: "8px" }} />
+            +57 3204663151
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <MdEmail style={{ marginRight: "8px" }} />
+            <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
+          </Text>
+        </Box>
+        <Box flex="1" boxShadow="md" p={4} m={10}>
+          <Image
+            src="./publico/Logo.png"
+            borderRadius="md"
+            mb="40px"
+            objectFit="contain"
+            // height="100px"
+            width="170px"
+            mx="auto"
+            className="service-image"
+          />
+          <Text display={"flex"} alignItems={"center"}>
+            <FaUserCircle style={{ marginRight: "8px" }} />
+            <strong>ARQ:</strong> JULIAN CHAVES
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <FaLocationDot style={{ marginRight: "8px" }} />
+            Cúcuta, Colombia
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <FaPhone style={{ marginRight: "8px" }} />
+            +57 3004911084
+          </Text>
+          <Text display={"flex"} alignItems={"center"}>
+            <MdEmail style={{ marginRight: "8px" }} />
+            <Link href="mailto:julian.chaves.pabon@gmail.com">
+              julian.chaves.pabon@gmail.com
+            </Link>
+          </Text>
+        </Box>
       </Box>
     </>
   );

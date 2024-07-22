@@ -55,12 +55,8 @@ function Footer() {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <Image
-              src="./publico/VER_WHITE.png"
-              alt="Logo"
-              width="120px"
-              height="120px"
-            />
+            <Image src="./publico/VER_WHITE.png" alt="Logo" width="110px" />
+            <Image src="./publico/LogoJulian.png" alt="Logo" width="110px" />
           </GridItem>
           <GridItem height="100%" bg="white" />
           <GridItem
@@ -97,13 +93,20 @@ function Footer() {
         </Grid>
       ) : (
         <Flex direction="column" alignItems="center" width="100%">
-          <Image
-            src="./publico/VER_WHITE.png"
-            alt="Logo"
-            width="120px"
-            height="120px"
-            mb="24px"
-          />
+          <Flex>
+            <Image
+              src="./publico/VER_WHITE.png"
+              alt="Logo"
+              width="100px"
+              mb="24px"
+            />
+            <Image
+              src="./publico/LogoJulian.png"
+              alt="Logo"
+              width="100px"
+              mb="24px"
+            />
+          </Flex>
           <Text color="white" fontSize="lg" mb="24px">
             Email:{" "}
             <Link href="mailto:swag.arquitectos@gmail.com">
