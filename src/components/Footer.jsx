@@ -6,6 +6,7 @@ import {
   IconButton,
   Image,
   useMediaQuery,
+  Link,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
@@ -55,7 +56,7 @@ function Footer() {
             justifyContent={"center"}
           >
             <Image
-              src="/VER_WHITE.png"
+              src="./publico/VER_WHITE.png"
               alt="Logo"
               width="120px"
               height="120px"
@@ -69,7 +70,10 @@ function Footer() {
             justifyContent="center"
           >
             <Text color="white" fontSize="lg" mb="24px">
-              Email: swag.arquitectos@gmail.com
+              Email:{" "}
+              <Link href="mailto:swag.arquitectos@gmail.com">
+                swag.arquitectos@gmail.com
+              </Link>
             </Text>
             <Flex justifyContent="space-around" width="300px" mb="24px">
               {socialLinks.map((link, index) => (
@@ -94,14 +98,17 @@ function Footer() {
       ) : (
         <Flex direction="column" alignItems="center" width="100%">
           <Image
-            src="/VER_WHITE.png"
+            src="./publico/VER_WHITE.png"
             alt="Logo"
             width="120px"
             height="120px"
             mb="24px"
           />
           <Text color="white" fontSize="lg" mb="24px">
-            Email: swag.arquitectos@gmail.com
+            Email:{" "}
+            <Link href="mailto:swag.arquitectos@gmail.com">
+              swag.arquitectos@gmail.com
+            </Link>
           </Text>
           <Flex justifyContent="center" mb="24px">
             <IconButton

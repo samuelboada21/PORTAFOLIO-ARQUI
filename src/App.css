@@ -46,7 +46,7 @@
 
 /*Animacion para servicios*/
 @keyframes slideIn {
-  from {  
+  from {
     opacity: 0;
     transform: translateY(50px);
   }
@@ -72,4 +72,43 @@
 
 .service-image:hover {
   transform: scale(1.1);
+}
+
+/*Animacion para logos de motores*/
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.image {
+  /* Estado inicial antes de la animación */
+  transform: translateY(10px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-animate {
+  animation: moveUpDown 3s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.image-1 {
+  animation-delay: 0s;
+}
+
+.image-2 {
+  animation-delay: 0.5s;
+}
+
+.image-3 {
+  animation-delay: 1s;
+}
+
+.image-4 {
+  animation-delay: 1.5s;
 }

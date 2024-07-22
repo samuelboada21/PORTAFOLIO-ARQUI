@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import Servicios from "../components/servicios";
+import Servicios from "../components/Servicios";
 import { useRef } from "react";
 import { FaArrowDown } from "react-icons/fa";
 
@@ -46,7 +46,7 @@ function Inicio() {
       >
         <Box
           as="img"
-          src="/FONDO.png"
+          src="./publico/FONDO.png"
           alt="Fondo"
           position="absolute"
           top="0"

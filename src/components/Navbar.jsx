@@ -57,7 +57,7 @@ function Navbar() {
     >
       <Flex direction="column">
         <Link href="/">
-          <Image src="/HOR_WHITE.png" alt="Logo" w="120px" />
+          <Image src="./publico/HOR_WHITE.png" alt="Logo" w="120px" />
         </Link>
         {!w && (
           <Box mt={2}>
@@ -183,6 +183,19 @@ function Navbar() {
                   }}
                 >
                   Portafolio
+                </Link>
+                <Link
+                  href="/nosotros"
+                  mb="10px"
+                  p="3px"
+                  display="block"
+                  color="white"
+                  _hover={{
+                    borderRadius: "md",
+                    bg: "rgba(255, 255, 255, 0.2)",
+                  }}
+                >
+                  Nosotros
                 </Link>
                 <Link
                   href="/contacto"
