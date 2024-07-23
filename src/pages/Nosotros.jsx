@@ -47,7 +47,7 @@ export default function Nosotros() {
         p="30px"
       >
         <Image
-          src="./RENDERS/ZONA TVs/zt1.png"
+          src="./RENDERS/ZONA_TVs/zt1.png"
           alt="Fondo"
           position="absolute"
           top="0"
@@ -330,7 +330,7 @@ export default function Nosotros() {
           />
           <Text display={"flex"} alignItems={"center"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong>ARQ:</strong> FERNANDO GUERRERO
+            <strong style={{marginRight: "5px"}}>ARQ:</strong> FERNANDO GUERRERO
           </Text>
           <Text display={"flex"} alignItems={"center"}>
             <FaLocationDot style={{ marginRight: "8px" }} />
@@ -358,7 +358,7 @@ export default function Nosotros() {
           />
           <Text display={"flex"} alignItems={"center"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong>ARQ:</strong> JULIAN CHAVES
+            <strong style={{marginRight: "5px"}}>ARQ:</strong> JULIAN CHAVES
           </Text>
           <Text display={"flex"} alignItems={"center"}>
             <FaLocationDot style={{ marginRight: "8px" }} />

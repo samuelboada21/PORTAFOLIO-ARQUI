@@ -1,19 +1,20 @@
-import { Box, Button, Flex, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import Servicios from "../components/Servicios";
+import InicioNosotros from "./InicioNosotros";
+import InicioTrabajo from "./InicioTrabajo";
 
 function Inicio() {
-  const [w] = useMediaQuery("(min-width: 700px)");
+  // const [w] = useMediaQuery("(min-width: 700px)");
   const [currentImage, setCurrentImage] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const images = [
-    { src: "./RENDERS/EDIFICIO/e2.jpg", text: "Visualización" },
-    { src: "./RENDERS/EDIFICIO/e3.jpg", text: "Inspiración" },
-    { src: "./RENDERS/EDIFICIO/e4.jpg", text: "Transformación" },
-    { src: "./RENDERS/EDIFICIO/e5.jpg", text: "Innovación" },
+    { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "Visualización" },
+    { src: "./RENDERS/FACHADA/f2.jpg", text: "Inspiración" },
+    { src: "./RENDERS/COCINA_INTERIOR/ci4.jpg", text: "Transformación" },
+    { src: "./RENDERS/EDIFICIO/e10.jpg", text: "Innovación" },
   ];
-
   useEffect(() => {
     const interval = setInterval(() => {
       setTransitionEnabled(true);
@@ -85,15 +86,37 @@ function Inicio() {
           zIndex="0"
         >
           {images.map((image, index) => (
-            <Box key={index} flex="none" width="100%" height="100%">
+            <Box
+              key={index}
+              flex="none"
+              width="100%"
+              height="100%"
+              position="relative"
+            >
+              <Box
+                backgroundImage={`url(${image.src})`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                filter="blur(8px)"
+                width="100%"
+                height="100%"
+                position="absolute"
+                top="0"
+                left="0"
+                zIndex="0"
+              />
               <Box
                 as="img"
                 src={image.src}
                 alt={image.text}
                 width="100%"
                 height="100%"
-                objectFit={!w && "contain"}
+                objectFit="contain"
                 opacity={0.9}
+                position="absolute"
+                top="0"
+                left="0"
+                zIndex="1"
               />
               <Flex
                 direction="column"
@@ -115,15 +138,31 @@ function Inicio() {
             </Box>
           ))}
           {/* Duplicating the first image to achieve smooth transition */}
-          <Box flex="none" width="100%" height="100%">
+          <Box flex="none" width="100%" height="100%" position="relative">
+            <Box
+              backgroundImage={`url(${images[0].src})`}
+              backgroundSize="cover"
+              backgroundPosition="center"
+              filter="blur(8px)"
+              width="100%"
+              height="100%"
+              position="absolute"
+              top="0"
+              left="0"
+              zIndex="0"
+            />
             <Box
               as="img"
               src={images[0].src}
               alt={images[0].text}
               width="100%"
               height="100%"
-              objectFit={!w && "contain"}
+              objectFit="contain"
               opacity={0.9}
+              position="absolute"
+              top="0"
+              left="0"
+              zIndex="1"
             />
             <Flex
               direction="column"
@@ -156,12 +195,11 @@ function Inicio() {
             className="slide-in-left"
             mb={"120px"}
           >
-            <Text className="slide-in-left" as="span" color="black" mr="5px">
-              Bienv
+            <Text className="changeText" as="span" color="#1E1D1D" mr="5px">
+              Bienvenido
             </Text>
-            enido
           </Text>
-          <Text fontWeight="semibold" className="slide-in-right" fontSize="lg">
+          <Text fontWeight="bold" className="slide-in-right" fontSize="xl">
             Nos complace tu visita
           </Text>
           <Button
@@ -185,6 +223,7 @@ function Inicio() {
           </Button>
         </Flex>
       </Flex>
+      {/* APARTADO DE SERVICIOS */}
       <Flex direction={"column"}>
         <Servicios servicios={serviciosData} />
         <Button className="service-image" mx="auto" w="100px" mb="40px">
@@ -193,6 +232,9 @@ function Inicio() {
           </Link>
         </Button>
       </Flex>
+      {/* APARTADO DE NOSOTROS */}
+      <InicioNosotros/>
+      <InicioTrabajo/>
     </>
   );
 }
