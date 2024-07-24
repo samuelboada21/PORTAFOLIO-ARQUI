@@ -6,7 +6,6 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 
 export default function InicioNosotros() {
   const isMdOrLarger = useBreakpointValue({ base: false, md: true });
@@ -94,11 +93,20 @@ export default function InicioNosotros() {
             Innovación, Detalle, Experiencia, Calidad, Inspiración,
             Transformación.
           </Text>
-          <Link to="/nosotros">
-            <Button className="service-image" color="black" _hover="none" _active="none" bg="#FFFFFF" size="md">
-              Conoce más
-            </Button>
-          </Link>
+          <Button
+            mt="4"
+            display="flex"
+            className="service-image"
+            mx="auto"
+            maxW="100px"
+            color="black"
+            _hover="none"
+            _active="none"
+            bg="#FFFFFF"
+            onClick={() => (window.location.href = "/nosotros")}
+          >
+            Conoce más
+          </Button>
         </Flex>
       </Flex>
       {/* Imagen nítida en fondo para pantallas pequeñas */}

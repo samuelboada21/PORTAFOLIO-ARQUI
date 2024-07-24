@@ -83,10 +83,10 @@ function Footer() {
             </Flex>
             <Flex justifyContent="center" direction={"column"}>
               <Text textAlign="center" color="gray">
-                Todos los derechos reservados ©{currentYear} - SWAQ
+                Todos los derechos reservados ©{currentYear}
               </Text>
               <Text textAlign="center" color="gray">
-                <strong>Web By SamuelDev21</strong>
+                <strong>SWAG ARQUITECTOS</strong>
               </Text>
             </Flex>
           </GridItem>
@@ -150,10 +150,10 @@ function Footer() {
           </Flex>
           <Flex direction={"column"} alignItems="center">
             <Text textAlign="center" color="gray">
-              Todos los derechos reservados ©{currentYear} - SWAG
+              Todos los derechos reservados ©{currentYear}
             </Text>
             <Text textAlign="center" color="gray">
-              <strong>Web By SamuelDev21</strong>
+              <strong>SWAG ARQUITECTOS</strong>
             </Text>
           </Flex>
         </Flex>
