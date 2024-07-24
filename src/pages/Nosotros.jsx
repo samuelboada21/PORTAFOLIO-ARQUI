@@ -299,7 +299,16 @@ export default function Nosotros() {
       <Box bg="#4D4D4D" p="2px 0px 20px 0px">
         <Flex direction={"column"}>
           <Servicios servicios={serviciosData} />
-          <Button className="service-image" mx="auto" w="100px" mb="40px">
+          <Button
+            className="service-image"
+            color="black"
+            _hover="none"
+            _active="none"
+            bg="#FFFFFF"
+            mx="auto"
+            w="100px"
+            mb="40px"
+          >
             <Link _hover="none" href="/servicios">
               Servicios
             </Link>
@@ -330,7 +339,8 @@ export default function Nosotros() {
           />
           <Text display={"flex"} alignItems={"center"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong style={{marginRight: "5px"}}>ARQ:</strong> FERNANDO GUERRERO
+            <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO
+            GUERRERO
           </Text>
           <Text display={"flex"} alignItems={"center"}>
             <FaLocationDot style={{ marginRight: "8px" }} />
@@ -358,7 +368,7 @@ export default function Nosotros() {
           />
           <Text display={"flex"} alignItems={"center"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong style={{marginRight: "5px"}}>ARQ:</strong> JULIAN CHAVES
+            <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
           </Text>
           <Text display={"flex"} alignItems={"center"}>
             <FaLocationDot style={{ marginRight: "8px" }} />

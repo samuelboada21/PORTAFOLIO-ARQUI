@@ -10,10 +10,11 @@ function Inicio() {
   const [currentImage, setCurrentImage] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const images = [
-    { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "Visualización" },
+    { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "BIENVENIDO" },
+    { src: "./RENDERS/COCINA_INTERIOR/ci2.jpg", text: "Visualización" },
     { src: "./RENDERS/FACHADA/f2.jpg", text: "Inspiración" },
     { src: "./RENDERS/COCINA_INTERIOR/ci4.jpg", text: "Transformación" },
-    { src: "./RENDERS/EDIFICIO/e10.jpg", text: "Innovación" },
+    { src: "./RENDERS/FACHADA/f1.jpg", text: "Innovación" },
   ];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -133,7 +134,9 @@ function Inicio() {
                 p={5}
                 borderRadius="md"
               >
-                <Text fontSize="2xl">{image.text}</Text>
+                <Text fontSize={["lg", "3xl", "4xl", "5xl"]} fontWeight="bold">
+                  {image.text}
+                </Text>
               </Flex>
             </Box>
           ))}
@@ -179,7 +182,9 @@ function Inicio() {
               p={5}
               borderRadius="md"
             >
-              <Text fontSize="2xl">{images[0].text}</Text>
+              <Text fontSize={["xl", "2xl", "3xl", "4xl", "6xl"]} fontWeight="bold">
+                {images[0].text}
+              </Text>
             </Flex>
           </Box>
         </Box>
@@ -189,7 +194,7 @@ function Inicio() {
           justifyContent="center"
           zIndex="1"
         >
-          <Text
+          {/* <Text
             fontSize={["5xl", "6xl"]}
             fontWeight="bold"
             className="slide-in-left"
@@ -201,7 +206,7 @@ function Inicio() {
           </Text>
           <Text fontWeight="bold" className="slide-in-right" fontSize="xl">
             Nos complace tu visita
-          </Text>
+          </Text> */}
           <Button
             onClick={scrollToServicios}
             position="absolute"
@@ -226,15 +231,24 @@ function Inicio() {
       {/* APARTADO DE SERVICIOS */}
       <Flex direction={"column"}>
         <Servicios servicios={serviciosData} />
-        <Button className="service-image" mx="auto" w="100px" mb="40px">
+        <Button
+          className="service-image"
+          color="black"
+          _hover="none"
+          _active="none"
+          bg="#FFFFFF"
+          mx="auto"
+          w="100px"
+          mb="40px"
+        >
           <Link _hover="none" href="/servicios">
             Servicios
           </Link>
         </Button>
       </Flex>
       {/* APARTADO DE NOSOTROS */}
-      <InicioNosotros/>
-      <InicioTrabajo/>
+      <InicioNosotros />
+      <InicioTrabajo />
     </>
   );
 }

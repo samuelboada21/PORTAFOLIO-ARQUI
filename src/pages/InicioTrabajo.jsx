@@ -1,78 +1,100 @@
-import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import Slider from "react-slick";
+import {
+  Flex,
+  Box,
+  Image,
+  useBreakpointValue,
+  Link,
+  Button,
+  Heading,
+} from "@chakra-ui/react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const images = [
+  { src: "./RENDERS/EDIFICIO/e1.jpg", link: "/portafolio" },
+  { src: "./RENDERS/EDIFICIO/e4.jpg", link: "/portafolio" },
+  { src: "./RENDERS/EDIFICIO/e5.jpg", link: "/portafolio" },
+  { src: "./RENDERS/EDIFICIO/e8.jpg", link: "/portafolio" },
+  { src: "./RENDERS/EDIFICIO/e10.jpg", link: "/portafolio" },
+];
 
 export default function CardComponent() {
   const isSmOrLarger = useBreakpointValue({ base: false, md: true });
 
+  const bgGradient = useBreakpointValue({
+    base: "linear-gradient(180deg, #1E1D1D 0%, #1E1D1D 30%, #fff 25%, #fff 65%, #1E1D1D 65%, #1E1D1D 100%)",
+    sm: "linear-gradient(180deg, #1E1D1D 0%, #1E1D1D 25%, #fff 25%, #fff 70%, #1E1D1D 70%, #1E1D1D 100%)",
+  });
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isSmOrLarger ? 2 : 1,
+    slidesToScroll: 2,
+    swipeToSlide: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
   return (
     <Flex
+      direction="column"
       width="100%"
-      flexDirection={isSmOrLarger ? "row" : "column"}
       justifyContent="center"
-      alignItems="center"
       padding="2rem"
-      mt={["0px","100px","100px","100px"]}
+      mt={{ base: "0px", sm: "100px" }}
+      mb={{ base: "30px", md: "100px" }}
+      background={bgGradient}
     >
-      {/* Card 1 */}
-      <Box
-        width={isSmOrLarger ? "45%" : "100%"}
-        margin="1rem"
-        padding="1rem"
-        borderRadius="md"
-        boxShadow="lg"
-        position="relative"
-        bg="white"
+      <Heading as="h1" size="2xl" mb="4" color="white">
+        RENDERS
+      </Heading>
+      <Slider {...settings} style={{ width: "100%" }}>
+        {images.map((image, index) => (
+          <Link key={index} href={image.link}>
+            <Box
+              position="relative"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              width="100%"
+              height="0"
+              paddingBottom="75%"
+            >
+              <Image
+                src={image.src}
+                alt={`Imagen ${index + 1}`}
+                position="absolute"
+                top="0"
+                left="50%"
+                transform="translateX(-50%)"
+                width="80%"
+                height="90%"
+                // objectFit="cover"
+                borderRadius="20px"
+                boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
+              />
+            </Box>
+          </Link>
+        ))}
+      </Slider>
+      <Button
+        mt="4"
+        display="flex"
+        className="service-image"
+        mx="auto"
+        maxW="100px"
+        color="black"
+        _hover="none"
+        _active="none"
+        bg="#FFFFFF"
+        onClick={() => (window.location.href = "/portafolio")}
       >
-        <Image
-          src="./RENDERS/FACHADA/f1.jpg"
-          alt="Imagen 1"
-          position="absolute"
-          top="-50px"
-          left="50%"
-          transform="translateX(-50%)"
-          width="200px"
-          height="150px"
-          objectFit="cover"
-          boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
-        />
-        <Text mt="100px" fontWeight="bold" fontSize="lg">
-          Card 1 Title
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-      </Box>
-
-      {/* Card 2 */}
-      {isSmOrLarger && (
-        <Box
-          width="45%"
-          margin="1rem"
-          padding="1rem"
-          borderRadius="md"
-          boxShadow="lg"
-          position="relative"
-          bg="white"
-        >
-          <Image
-            src="./RENDERS/FACHADA/f2.jpg"
-            alt="Imagen 2"
-            position="absolute"
-            top="-50px"
-            left="50%"
-            transform="translateX(-50%)"
-            width="200px"
-            height="150px"
-            objectFit="cover"
-            boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
-          />
-          <Text mt="100px" fontWeight="bold" fontSize="lg">
-            Card 2 Title
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Text>
-        </Box>
-      )}
+        Más
+      </Button>
     </Flex>
   );
 }

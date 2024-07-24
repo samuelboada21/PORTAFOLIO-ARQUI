@@ -56,9 +56,14 @@ function Navbar() {
       zIndex="11"
     >
       <Flex direction="column">
-        <Link href="/">
-          <Image src="./publico/HOR_WHITE.png" alt="Logo" w="120px" />
-        </Link>
+        <Flex>
+          <Link href="/">
+            <Image src="./publico/HOR_WHITE.png" alt="Logo" w="120px" />
+          </Link>
+          <Link href="/">
+            <Image src="./publico/LogoJulian.png" alt="Logo" w="60px" ml="10px" />
+          </Link>
+        </Flex>
         {!w && (
           <Box mt={2}>
             {socialLinks.map((link, index) => (
