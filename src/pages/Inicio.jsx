@@ -182,7 +182,7 @@ function Inicio() {
               p={5}
               borderRadius="md"
             >
-              <Text fontSize={["xl", "2xl", "3xl", "4xl", "6xl"]} fontWeight="bold">
+              <Text fontSize={["lg", "3xl", "4xl", "5xl"]} fontWeight="bold">
                 {images[0].text}
               </Text>
             </Flex>

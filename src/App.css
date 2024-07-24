@@ -161,13 +161,13 @@
 /*Bienvenido change*/
 @keyframes colorChange {
   0% {
-    color: rgb(56, 56, 56);
+    color: rgb(105, 105, 105);
   }
   50% {
     color: white;
   }
   100% {
-    color: rgb(56, 56, 56);
+    color: rgb(105, 105, 105);
   }
 }
 

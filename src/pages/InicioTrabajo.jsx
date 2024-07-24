@@ -24,19 +24,27 @@ export default function CardComponent() {
 
   const bgGradient = useBreakpointValue({
     base: "linear-gradient(180deg, #1E1D1D 0%, #1E1D1D 30%, #fff 25%, #fff 65%, #1E1D1D 65%, #1E1D1D 100%)",
-    sm: "linear-gradient(180deg, #1E1D1D 0%, #1E1D1D 25%, #fff 25%, #fff 70%, #1E1D1D 70%, #1E1D1D 100%)",
+    sm: "linear-gradient(180deg, #1E1D1D 0%, #1E1D1D 25%, #fff 25%, #fff 75%, #1E1D1D 75%, #1E1D1D 100%)",
   });
 
   const settings = {
+    // dots: false,
+    // infinite: true,
+    // speed: 500,
+    // slidesToShow: isSmOrLarger ? 2 : 1,
+    // slidesToScroll: 2,
+    // swipeToSlide: true,
+    // arrows: false,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: isSmOrLarger ? 2 : 1,
-    slidesToScroll: 2,
-    swipeToSlide: true,
-    arrows: false,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    speed: 1000,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
   };
 
   return (
@@ -45,12 +53,12 @@ export default function CardComponent() {
       width="100%"
       justifyContent="center"
       padding="2rem"
-      mt={{ base: "0px", sm: "100px" }}
+      mt={{ base: "0px", sm: "60px" }}
       mb={{ base: "30px", md: "100px" }}
       background={bgGradient}
     >
-      <Heading as="h1" size="2xl" mb="4" color="white">
-        RENDERS
+      <Heading as="h1" size={["xl", "2xl"]} mb="4" color="white">
+        PROYECTOS
       </Heading>
       <Slider {...settings} style={{ width: "100%" }}>
         {images.map((image, index) => (
@@ -62,7 +70,7 @@ export default function CardComponent() {
               alignItems="center"
               width="100%"
               height="0"
-              paddingBottom="75%"
+              paddingBottom="60%"
             >
               <Image
                 src={image.src}
@@ -71,8 +79,8 @@ export default function CardComponent() {
                 top="0"
                 left="50%"
                 transform="translateX(-50%)"
-                width="80%"
-                height="90%"
+                width="70%"
+                height="100%"
                 // objectFit="cover"
                 borderRadius="20px"
                 boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
