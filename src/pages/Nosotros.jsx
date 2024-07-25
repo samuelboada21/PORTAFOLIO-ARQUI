@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Flex,
@@ -6,6 +7,12 @@ import {
   Grid,
   GridItem,
   useMediaQuery,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
   Link,
   Button,
 } from "@chakra-ui/react";
@@ -35,6 +42,14 @@ const serviciosData = [
 
 export default function Nosotros() {
   const [w] = useMediaQuery("(min-width: 800px)");
+  const { isOpen, onOpen, onClose: closeModal } = useDisclosure();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleClickImage = (image) => {
+    setSelectedImage(image);
+    onOpen();
+  };
+
   return (
     <>
       {/* Parte 1 Inicio de Nosotros*/}
@@ -328,11 +343,12 @@ export default function Nosotros() {
       >
         <Box flex="1" boxShadow="md" p={4} m={10}>
           <Image
-            src="./publico/Logo.png"
+            src="./publico/PerfilFernando.jpg"
             borderRadius="md"
             mb="40px"
             objectFit="contain"
             // height="100px"
+            onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
             width="170px"
             mx="auto"
             className="service-image"
@@ -365,6 +381,7 @@ export default function Nosotros() {
             width="170px"
             mx="auto"
             className="service-image"
+            onClick={() => handleClickImage("./publico/Logo.png")}
           />
           <Text display={"flex"} alignItems={"center"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
@@ -385,6 +402,21 @@ export default function Nosotros() {
             </Link>
           </Text>
         </Box>
+        {selectedImage && (
+        <Modal isOpen={isOpen} onClose={closeModal} isCentered>
+          <ModalOverlay />
+          <ModalContent maxW={{base: "100vw", md: "70vh"}} maxH="70vh" bg="transparent">
+            <ModalCloseButton />
+            <ModalBody>
+              <Image
+                src={selectedImage}
+                w="100%"
+                h="auto"
+              />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+      )}
       </Box>
     </>
   );

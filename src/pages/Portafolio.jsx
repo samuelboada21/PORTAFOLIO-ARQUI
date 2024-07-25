@@ -11,15 +11,16 @@ import { useState } from "react";
 import CarpetaImagenes from "../components/CarpetaImagenes";
 
 const imagePaths = [
+  { src: "./RENDERS/EDIFICIO/e10.jpg", titulo: "EDIFICIO CEIBA CENTRAL",carpeta: "EDIFICIO",},
+  { src: "./RENDERS/ING_ECU/ie3.jpg", titulo: "CASA RG", carpeta: "ING_ECU",},
+  { src: "./RENDERS/HABI_NIÑA/hn4.jpg", titulo: "HABITACIÓN DE NIÑA",carpeta: "HABI_NIÑA",},
   { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", titulo: "COCINA INTERIOR", carpeta: "COCINA_INTERIOR",},
-  { src: "./RENDERS/EDIFICIO/e10.jpg", titulo: "EDIFICIO",carpeta: "EDIFICIO",},
-  { src: "./RENDERS/HABI_NIÑA/hn1.jpg", titulo: "HABITACION",carpeta: "HABI_NIÑA",},
-  { src: "./RENDERS/HABITACION/h6.jpg", titulo: "HABITACION", carpeta: "HABITACION",},
-  {src: "./RENDERS/ING_ECU/ie2.jpg", titulo: "INSPIRACION", carpeta: "ING_ECU",},
-  { src: "./RENDERS/MAQUETA1/m11.png", titulo: "MAQUETA", carpeta: "MAQUETA1" },
+  { src: "./RENDERS/HABITACION/h6.jpg", titulo: "HABITACIÓN PRINCIPAL", carpeta: "HABITACION",},
+  { src: "./RENDERS/MAQUETA1/m11.png", titulo: "RENDER MAQUETA", carpeta: "MAQUETA1" },
+  { src: "./RENDERS/FACHADA/f2.jpg", titulo: "FACHADA PROYECTO F24", carpeta: "FACHADA" },
+  { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: "ZONA TV", carpeta: "ZONA_TVs" },
   { src: "./RENDERS/SALA/s4.jpg", titulo: "SALA", carpeta: "SALA" },
-  { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: "LOBBY", carpeta: "ZONA_TVs" },
-  { src: "./RENDERS/FACHADA/f2.jpg", titulo: "EXTERIOR", carpeta: "FACHADA" },
+  { src: "./RENDERS/BBQ/b3.jpg", titulo: "ZONA BBQ", carpeta: "BBQ" },
 ];
 
 const Portfolio = () => {
@@ -118,6 +119,7 @@ const Portfolio = () => {
                   fontSize={["xl", "2xl", "3xl"]}
                   fontWeight="bold"
                   color="white"
+                  textAlign={"center"}
                   textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"
                 >
                   {image.titulo}
