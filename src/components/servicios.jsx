@@ -3,7 +3,7 @@ import { Flex, Box, Image, Text, SimpleGrid } from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
-const Servicios = ({ servicios }) => {
+const servicios = ({ servicios }) => {
   return (
     <Flex m="30px 0px 30px 0px" direction="column" align="center" p={5}>
       <Text fontSize="3xl" fontWeight="bold" mb={5} color={"white"}>
@@ -59,4 +59,4 @@ const ServicioCard = ({ servicio }) => {
   );
 };
 
-export default Servicios;
+export default servicios;

@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import Servicios from "../components/Servicios";
+import Servicios from "../components/servicios";
 import InicioNosotros from "./InicioNosotros";
 import InicioTrabajo from "./InicioTrabajo";
 
