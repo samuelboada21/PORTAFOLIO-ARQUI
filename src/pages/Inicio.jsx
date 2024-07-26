@@ -6,37 +6,32 @@ import InicioNosotros from "./InicioNosotros";
 import InicioTrabajo from "./InicioTrabajo";
 
 function Inicio() {
+  // const [w] = useMediaQuery("(min-width: 700px)");
   const [currentImage, setCurrentImage] = useState(0);
-  const [transitionEnabled, setTransitionEnabled] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
   const images = [
     { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "BIENVENIDO" },
     { src: "./RENDERS/COCINA_INTERIOR/ci2.jpg", text: "Visualización" },
-    { src: "./RENDERS/ZONA_TVs/zt3.png", text: "Inspiración" },
+    { src: "./RENDERS/HABITACION/h1.jpg", text: "Inspiración" },
     { src: "./RENDERS/EDIFICIO/e3.jpg", text: "Transformación" },
     { src: "./nosotros/Nosotros1.png", text: "Innovación" },
   ];
-
   useEffect(() => {
-    if (imagesLoaded) {
-      const interval = setInterval(() => {
-        setTransitionEnabled(true);
-        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [imagesLoaded, images.length]);
-
-  const handleImageLoad = () => {
-    const loadedImages = images.every((image) => {
-      const img = new Image();
-      img.src = image.src;
-      return img.complete;
-    });
-    if (loadedImages) {
-      setImagesLoaded(true);
-    }
-  };
+    const interval = setInterval(() => {
+      setTransitionEnabled(true);
+      setCurrentImage((prevImage) => {
+        if (prevImage >= images.length) {
+          setTimeout(() => {
+            setTransitionEnabled(false);
+            setCurrentImage(0);
+          }, 1000);
+          return prevImage;
+        }
+        return prevImage + 1;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const serviciosRef = useRef(null);
 
@@ -123,7 +118,6 @@ function Inicio() {
                 top="0"
                 left="0"
                 zIndex="1"
-                onLoad={handleImageLoad}
               />
               <Flex
                 direction="column"
@@ -172,7 +166,6 @@ function Inicio() {
               top="0"
               left="0"
               zIndex="1"
-              onLoad={handleImageLoad}
             />
             <Flex
               direction="column"
@@ -201,6 +194,19 @@ function Inicio() {
           justifyContent="center"
           zIndex="1"
         >
+          {/* <Text
+            fontSize={["5xl", "6xl"]}
+            fontWeight="bold"
+            className="slide-in-left"
+            mb={"120px"}
+          >
+            <Text className="changeText" as="span" color="#1E1D1D" mr="5px">
+              Bienvenido
+            </Text>
+          </Text>
+          <Text fontWeight="bold" className="slide-in-right" fontSize="xl">
+            Nos complace tu visita
+          </Text> */}
           <Button
             onClick={scrollToServicios}
             position="absolute"
