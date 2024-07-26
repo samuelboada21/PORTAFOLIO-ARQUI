@@ -343,67 +343,66 @@ export default function Nosotros() {
         // justifyContent="center"
         // textAlign="center" // Centra el texto dentro de los boxes
       >
-        <Box flex="1" boxShadow="md" p={4} m={10}>
-          <Image
-            src="./publico/PerfilFernando.jpg"
-            borderRadius="md"
-            mb="40px"
-            objectFit="contain"
-            // height="100px"
-            onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
-            width="170px"
-            mx="auto"
-            className="service-image"
-          />
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO
-            GUERRERO
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaLocationDot style={{ marginRight: "8px" }} />
-            Cúcuta, Colombia
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaPhone style={{ marginRight: "8px" }} />
-            +57 3204663151
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <MdEmail style={{ marginRight: "8px" }} />
-            <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
-          </Text>
-        </Box>
-        <Box flex="1" boxShadow="md" p={4} m={10}>
-          <Image
-            src="./publico/Logo.png"
-            borderRadius="md"
-            mb="40px"
-            objectFit="contain"
-            // height="100px"
-            width="170px"
-            mx="auto"
-            className="service-image"
-            onClick={() => handleClickImage("./publico/Logo.png")}
-          />
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaUserCircle style={{ marginRight: "8px" }} />
-            <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaLocationDot style={{ marginRight: "8px" }} />
-            Cúcuta, Colombia
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <FaPhone style={{ marginRight: "8px" }} />
-            +57 3004911084
-          </Text>
-          <Text display={"flex"} alignItems={"center"} color={"white"}>
-            <MdEmail style={{ marginRight: "8px" }} />
-            <Link href="mailto:julian.chaves.pabon@gmail.com">
-              julian.chaves.pabon@gmail.com
-            </Link>
-          </Text>
-        </Box>
+        <Box flex="1" boxShadow="md" p={4} m={10} textAlign="center">
+        <Image
+          src="./publico/PerfilFernando.jpg"
+          borderRadius="md"
+          mb="40px"
+          objectFit="contain"
+          width="170px"
+          height="170px"  // Asegura la misma altura para ambas imágenes
+          mx="auto"
+          className="service-image"
+          onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
+        />
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaUserCircle style={{ marginRight: "8px" }} />
+          <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO GUERRERO
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaLocationDot style={{ marginRight: "8px" }} />
+          Cúcuta, Colombia
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaPhone style={{ marginRight: "8px" }} />
+          +57 3204663151
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <MdEmail style={{ marginRight: "8px" }} />
+          <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
+        </Text>
+      </Box>
+      <Box flex="1" boxShadow="md" p={4} m={10} textAlign="center">
+        <Image
+          src="./publico/PerfilJulian.jpeg"
+          borderRadius="md"
+          mb="40px"
+          objectFit="contain"
+          width="170px"
+          height="170px"  // Asegura la misma altura para ambas imágenes
+          mx="auto"
+          className="service-image"
+          onClick={() => handleClickImage("./publico/PerfilJulian.jpeg")}
+        />
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaUserCircle style={{ marginRight: "8px" }} />
+          <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaLocationDot style={{ marginRight: "8px" }} />
+          Cúcuta, Colombia
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <FaPhone style={{ marginRight: "8px" }} />
+          +57 3004911084
+        </Text>
+        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+          <MdEmail style={{ marginRight: "8px" }} />
+          <Link href="mailto:julian.chaves.pabon@gmail.com">
+            julian.chaves.pabon@gmail.com
+          </Link>
+        </Text>
+      </Box>
         {selectedImage && (
           <Modal isOpen={isOpen} onClose={closeModal} isCentered>
             <ModalOverlay />
