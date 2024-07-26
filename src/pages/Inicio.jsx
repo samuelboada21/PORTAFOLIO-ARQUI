@@ -1,9 +1,9 @@
 import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import Servicios from "../components/Servicios.jsx";
-import InicioNosotros from "./InicioNosotros.jsx";
-import InicioTrabajo from "./InicioTrabajo.jsx";
+import Servicios from "../components/Servicios";
+import InicioNosotros from "./InicioNosotros";
+import InicioTrabajo from "./InicioTrabajo";
 
 function Inicio() {
   // const [w] = useMediaQuery("(min-width: 700px)");

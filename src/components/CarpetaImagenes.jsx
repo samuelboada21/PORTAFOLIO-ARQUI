@@ -116,7 +116,7 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
   return (
     <Box p="20px" mt="150px">
       <Box mb="20px">
-        <Text fontSize="2xl" fontWeight="bold">
+        <Text fontSize="2xl" fontWeight="bold" color={"white"}>
           {titulo.replace("_", " ").toUpperCase()}
         </Text>
         <Text as="button" onClick={onClose} color="blue.300">

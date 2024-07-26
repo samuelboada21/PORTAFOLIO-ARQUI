@@ -83,6 +83,7 @@ function Navbar() {
           <Link
             href="/"
             m="0px 10px"
+            color="white"
             textDecoration={location.pathname === "/" ? "underline" : "none"}
           >
             Inicio
@@ -110,6 +111,7 @@ function Navbar() {
           <Link
             href="/nosotros"
             m="0px 10px"
+            color="white"
             textDecoration={location.pathname === "/nosotros" ? "underline" : "none"}
           >
             Nosotros

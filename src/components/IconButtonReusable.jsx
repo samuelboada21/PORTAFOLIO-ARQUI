@@ -9,6 +9,7 @@ function IconButtonReusable({ icon, href, colorHover }) {
       _hover={{ color: colorHover }}
       _active={"none"}
       icon={icon}
+      color="white"
       onClick={() => window.open(href, "_blank")}
     />
   );

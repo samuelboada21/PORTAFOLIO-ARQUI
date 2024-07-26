@@ -119,6 +119,7 @@ function Footer() {
               className="animate-top"
               _hover={{ color: "blue" }}
               icon={<FaFacebook />}
+              color="white"
               onClick={() =>
                 window.open(
                   "https://www.facebook.com/profile.php?id=100092853669268&mibextid=ZbWKwL",
@@ -131,6 +132,7 @@ function Footer() {
               className="animate-top"
               _hover={{ color: "green.500" }}
               icon={<RiWhatsappFill size="20px" />}
+              color="white"
               onClick={() =>
                 window.open(`https://wa.me/${whatsappNumber}`, "_blank")
               }
@@ -140,6 +142,7 @@ function Footer() {
               className="animate-top"
               _hover={{ color: "pink.400" }}
               icon={<FaInstagram size="18px" />}
+              color="white"
               onClick={() =>
                 window.open(
                   "https://www.instagram.com/swag_arquitectos/",

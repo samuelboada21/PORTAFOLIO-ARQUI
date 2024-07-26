@@ -168,7 +168,7 @@ function Contacto() {
                   boxShadow="md"
                   flex="1"
                 >
-                  <Text isTruncated whiteSpace="nowrap">
+                  <Text isTruncated whiteSpace="nowrap" color="white">
                     swag.arquitectos@gmail.com
                   </Text>
                 </Box>

@@ -127,6 +127,7 @@ export default function Nosotros() {
             fontSize={["xl", "2xl", "3xl", "4xl"]}
             fontWeight="bold"
             pt="70px"
+            color={"white"}
           >
             MOTOR DE RENDERIZADO
           </Text>
@@ -134,6 +135,7 @@ export default function Nosotros() {
             fontSize={{ base: "sm", sm: "lg" }}
             fontWeight="semibold"
             pt="30px"
+            color={"white"}
           >
             Swag Arquitectos utiliza motores de renderizado avanzados para
             transformar modelos 3D en imágenes fotorrealistas, garantizando
@@ -353,20 +355,20 @@ export default function Nosotros() {
             mx="auto"
             className="service-image"
           />
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
             <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO
             GUERRERO
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaLocationDot style={{ marginRight: "8px" }} />
             Cúcuta, Colombia
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaPhone style={{ marginRight: "8px" }} />
             +57 3204663151
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <MdEmail style={{ marginRight: "8px" }} />
             <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
           </Text>
@@ -383,19 +385,19 @@ export default function Nosotros() {
             className="service-image"
             onClick={() => handleClickImage("./publico/Logo.png")}
           />
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaUserCircle style={{ marginRight: "8px" }} />
             <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaLocationDot style={{ marginRight: "8px" }} />
             Cúcuta, Colombia
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <FaPhone style={{ marginRight: "8px" }} />
             +57 3004911084
           </Text>
-          <Text display={"flex"} alignItems={"center"}>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
             <MdEmail style={{ marginRight: "8px" }} />
             <Link href="mailto:julian.chaves.pabon@gmail.com">
               julian.chaves.pabon@gmail.com
@@ -403,20 +405,20 @@ export default function Nosotros() {
           </Text>
         </Box>
         {selectedImage && (
-        <Modal isOpen={isOpen} onClose={closeModal} isCentered>
-          <ModalOverlay />
-          <ModalContent maxW={{base: "100vw", md: "70vh"}} maxH="70vh" bg="transparent">
-            <ModalCloseButton />
-            <ModalBody>
-              <Image
-                src={selectedImage}
-                w="100%"
-                h="auto"
-              />
-            </ModalBody>
-          </ModalContent>
-        </Modal>
-      )}
+          <Modal isOpen={isOpen} onClose={closeModal} isCentered>
+            <ModalOverlay />
+            <ModalContent
+              maxW={{ base: "100vw", md: "70vh" }}
+              maxH="70vh"
+              bg="transparent"
+            >
+              <ModalCloseButton />
+              <ModalBody>
+                <Image src={selectedImage} w="100%" h="auto" />
+              </ModalBody>
+            </ModalContent>
+          </Modal>
+        )}
       </Box>
     </>
   );

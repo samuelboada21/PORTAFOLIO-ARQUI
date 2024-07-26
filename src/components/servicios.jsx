@@ -6,7 +6,7 @@ import { useState } from "react";
 const Servicios = ({ servicios }) => {
   return (
     <Flex m="30px 0px 30px 0px" direction="column" align="center" p={5}>
-      <Text fontSize="3xl" fontWeight="bold" mb={5}>
+      <Text fontSize="3xl" fontWeight="bold" mb={5} color={"white"}>
         Nuestros Servicios
       </Text>
       <SimpleGrid columns={[1, 2, 2, 4]} spacing={10}>
@@ -53,8 +53,8 @@ const ServicioCard = ({ servicio }) => {
         mx="auto"
         className="service-image"
       />
-      <Text mb={2}>{servicio.titulo}</Text>
-      <Text>{servicio.descripcion}</Text>
+      <Text color={"white"} mb={2}>{servicio.titulo}</Text>
+      {/* <Text color={"white"} >{servicio.descripcion}</Text> */}
     </Box>
   );
 };
