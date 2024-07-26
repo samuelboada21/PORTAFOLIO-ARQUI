@@ -355,19 +355,19 @@ export default function Nosotros() {
           className="service-image"
           onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
         />
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaUserCircle style={{ marginRight: "8px" }} />
           <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO GUERRERO
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaLocationDot style={{ marginRight: "8px" }} />
           Cúcuta, Colombia
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaPhone style={{ marginRight: "8px" }} />
           +57 3204663151
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <MdEmail style={{ marginRight: "8px" }} />
           <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
         </Text>
@@ -384,19 +384,19 @@ export default function Nosotros() {
           className="service-image"
           onClick={() => handleClickImage("./publico/PerfilJulian.jpeg")}
         />
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaUserCircle style={{ marginRight: "8px" }} />
           <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaLocationDot style={{ marginRight: "8px" }} />
           Cúcuta, Colombia
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <FaPhone style={{ marginRight: "8px" }} />
           +57 3004911084
         </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"} justifyContent="center">
+        <Text display={"flex"} alignItems={"center"} color={"white"}>
           <MdEmail style={{ marginRight: "8px" }} />
           <Link href="mailto:julian.chaves.pabon@gmail.com">
             julian.chaves.pabon@gmail.com
