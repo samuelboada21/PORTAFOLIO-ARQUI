@@ -11,10 +11,10 @@ import InicioTrabajo from "./InicioTrabajo";
 // Carrusel de imágenes
 const carouselImages = [
   { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "BIENVENIDO" },
-  { src: "./RENDERS/COCINA_INTERIOR/ci2.jpg", text: "Visualización" },
+  { src: "./RENDERS/HABITACION2/hb4.jpg", text: "Visualización" },
   { src: "./RENDERS/ZONA_TVs/zt2.png", text: "Inspiración" },
   { src: "./RENDERS/EDIFICIO/e2.jpg", text: "Transformación" },
-  { src: "./RENDERS/HABITACION2/hb4.jpg", text: "Innovación" },
+  { src: "./RENDERS/BBQ/b2.jpg", text: "Innovación" },
 ];
 
 const settings = {
