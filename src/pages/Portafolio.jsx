@@ -21,6 +21,7 @@ const imagePaths = [
   { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: "ZONA TV", carpeta: "ZONA_TVs" },
   { src: "./RENDERS/SALA/s4.jpg", titulo: "SALA", carpeta: "SALA" },
   { src: "./RENDERS/BBQ/b3.jpg", titulo: "ZONA BBQ", carpeta: "BBQ" },
+  { src: "./RENDERS/HABITACION2/hb1.jpg", titulo: "DORMITORIO", carpeta: "HABITACION2" },
 ];
 
 const Portfolio = () => {

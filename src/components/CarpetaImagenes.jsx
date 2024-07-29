@@ -89,6 +89,13 @@ const carpetaImages = {
     { src: "./RENDERS/BBQ/b3.jpg" },
     { src: "./RENDERS/BBQ/b4.jpg" },
   ],
+  HABITACION2: [
+    { src: "./RENDERS/HABITACION2/hb3.jpg" },
+    { src: "./RENDERS/HABITACION2/hb5.jpg" },
+    { src: "./RENDERS/HABITACION2/hb4.jpg" },
+    { src: "./RENDERS/HABITACION2/hb2.jpg" },
+    { src: "./RENDERS/HABITACION2/hb1.jpg" },
+  ],
   // Añadir otras carpetas aquí...
 };
 
