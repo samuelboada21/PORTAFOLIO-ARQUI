@@ -16,12 +16,12 @@ const imagePaths = [
   { src: "./RENDERS/HABI_NIÑA/hn4.jpg", titulo: "HABITACIÓN DE NIÑA",carpeta: "HABI_NIÑA",},
   { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", titulo: "COCINA INTERIOR", carpeta: "COCINA_INTERIOR",},
   { src: "./RENDERS/HABITACION/h6.jpg", titulo: "HABITACIÓN PRINCIPAL", carpeta: "HABITACION",},
+  { src: "./RENDERS/HABITACION2/hb1.jpg", titulo: "DORMITORIO", carpeta: "HABITACION2" },
   { src: "./RENDERS/MAQUETA1/m11.png", titulo: "RENDER MAQUETA", carpeta: "MAQUETA1" },
   { src: "./RENDERS/FACHADA/f2.jpg", titulo: "FACHADA PROYECTO F24", carpeta: "FACHADA" },
   { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: "ZONA TV", carpeta: "ZONA_TVs" },
   { src: "./RENDERS/SALA/s4.jpg", titulo: "SALA", carpeta: "SALA" },
   { src: "./RENDERS/BBQ/b3.jpg", titulo: "ZONA BBQ", carpeta: "BBQ" },
-  { src: "./RENDERS/HABITACION2/hb1.jpg", titulo: "DORMITORIO", carpeta: "HABITACION2" },
 ];
 
 const Portfolio = () => {
