@@ -23,7 +23,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 400,
+  speed: 800,
   autoplaySpeed: 3000,
   cssEase: "linear",
   arrows: false, // Desactiva las flechas de navegación
