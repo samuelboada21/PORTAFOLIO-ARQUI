@@ -68,7 +68,6 @@ const carpetaImages = {
     { src: "./RENDERS/HABITACION2/hb2.jpg" },
     { src: "./RENDERS/HABITACION2/hb1.jpg" },
     { video: "https://player.vimeo.com/video/993496971" },
-    { video: "https://player.vimeo.com/video/993496971" },
   ],
   MAQUETA1: [
     { src: "./RENDERS/MAQUETA1/m11.png" },
