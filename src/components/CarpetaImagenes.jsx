@@ -67,6 +67,7 @@ const carpetaImages = {
     { src: "./RENDERS/HABITACION2/hb4.jpg" },
     { src: "./RENDERS/HABITACION2/hb2.jpg" },
     { src: "./RENDERS/HABITACION2/hb1.jpg" },
+    { video: "https://player.vimeo.com/video/993496971" },
   ],
   MAQUETA1: [
     { src: "./RENDERS/MAQUETA1/m11.png" },
@@ -103,7 +104,8 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
   const { isOpen, onOpen, onClose: closeModal } = useDisclosure();
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = carpetaImages[carpeta] || [];
-  const selectedImage = images[currentIndex];
+  const filteredImages = images.filter((item) => item.src);
+  const selectedImage = filteredImages[currentIndex];
 
   const handleClickImage = (index) => {
     setCurrentIndex(index);
@@ -111,12 +113,12 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredImages.length);
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? filteredImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -130,11 +132,27 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
           Volver al portafolio
         </Text>
       </Box>
+      {images
+        .filter((item) => item.video)
+        .map((item, index) => (
+          <Box key={index} w="100%" as="button" minHeight="80vh">
+            <iframe
+              src={item.video}
+              width="100%"
+              height="80vh"
+              style={{ minHeight: "80vh" }}
+              // frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              title={`Video ${index}`}
+            ></iframe>
+          </Box>
+        ))}
       <Grid
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
         gap={2}
       >
-        {images.map((image, index) => (
+        {filteredImages.map((image, index) => (
           <GridItem key={index} position="relative" overflow="hidden">
             <Image
               src={image.src}
@@ -160,7 +178,7 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
             <ModalBody position="relative" p={0}>
               <Box
                 position="fixed"
-                left={{base: "0%", sm: "0.5%"}}
+                left={{ base: "0%", sm: "0.5%" }}
                 top="50%"
                 bg="white"
                 w={{ base: "6vh", md: "8vh" }}
@@ -189,7 +207,7 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
               <Box
                 position="fixed"
                 top="50%"
-                right={{base: "0%", sm: "2%"}}
+                right={{ base: "0%", sm: "2%" }}
                 bg="white"
                 w={{ base: "6vh", md: "8vh" }}
                 h={{ base: "6vh", md: "8vh" }}
