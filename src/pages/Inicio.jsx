@@ -4,18 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import Servicios from "../components/servicios";
+import Servicios from "../components/Servicios";
 import InicioNosotros from "./InicioNosotros";
 import InicioTrabajo from "./InicioTrabajo";
-
-// Carrusel de imágenes
-const carouselImages = [
-  { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: "BIENVENIDO" },
-  { src: "./RENDERS/HABITACION2/hb4.jpg", text: "Visualización" },
-  { src: "./RENDERS/ZONA_TVs/zt2.png", text: "Inspiración" },
-  { src: "./RENDERS/EDIFICIO/e2.jpg", text: "Transformación" },
-  { src: "./RENDERS/BBQ/b2.jpg", text: "Innovación" },
-];
+import { useTranslation } from "react-i18next";
 
 const settings = {
   dots: false, // Desactiva los puntos de navegación
@@ -34,6 +26,16 @@ const settings = {
 };
 
 export default function Inicio() {
+  const { t } = useTranslation();
+  // Carrusel de imágenes
+  const carouselImages = [
+    { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", text: t('carrusel.bienvenido') },
+    { src: "./RENDERS/HABITACION2/hb4.jpg", text: t('carrusel.visualizacion') },
+    { src: "./RENDERS/ZONA_TVs/zt2.png", text: t('carrusel.inspiracion') },
+    { src: "./RENDERS/EDIFICIO/e2.jpg", text: t('carrusel.transformacion') },
+    { src: "./RENDERS/BBQ/b2.jpg", text: t('carrusel.innovacion') },
+  ];
+ 
   const serviciosRef = useRef(null);
 
   const scrollToServicios = () => {
@@ -48,19 +50,19 @@ export default function Inicio() {
   const serviciosData = [
     {
       imagen: "./servicios/FotoRealista.png",
-      titulo: "Renderizado Fotorrealista",
+      titulo: t('servicios.renderizado'),
     },
     {
       imagen: "./servicios/TresD.png",
-      titulo: "Animaciones 3D",
+      titulo: t('servicios.animaciones'),
     },
     {
       imagen: "./servicios/Virtuales.png",
-      titulo: "Recorridos Virtuales",
+      titulo: t('servicios.recorridos'),
     },
     {
       imagen: "./servicios/Interiores.png",
-      titulo: "Visualización de Interiores",
+      titulo: t('servicios.visualizacion'),
     },
   ];
 
@@ -164,7 +166,7 @@ export default function Inicio() {
           mb="40px"
         >
           <Link _hover="none" href="/servicios">
-            Servicios
+            {t('servicios.boton')}
           </Link>
         </Button>
       </Flex>

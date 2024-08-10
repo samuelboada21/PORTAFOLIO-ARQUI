@@ -10,8 +10,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { MdSend } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 function Contacto() {
+  const { t } = useTranslation();
   const toast = useToast();
   const actionURL = "https://formspree.io/f/mqazeoqy";
 
@@ -32,8 +34,8 @@ function Contacto() {
 
       if (response.ok) {
         toast({
-          title: "Mensaje enviado",
-          description: "Tu mensaje ha sido enviado exitosamente.",
+          title: t('contacto.alertaTitulo'),
+          description: t('contacto.alertaDescripcion'),
           status: "success",
           duration: 5000,
           isClosable: true,
@@ -45,8 +47,7 @@ function Contacto() {
     } catch (error) {
       toast({
         title: "Error",
-        description:
-          "Hubo un problema al enviar tu mensaje. Intenta nuevamente.",
+        description: t('contacto.alertaProblema'),
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -86,9 +87,7 @@ function Contacto() {
             maxW="750px"
             color="white"
           >
-            Gracias por tu visita, esperamos que haya sido de tu agrado. Si
-            deseas, puedes enviarnos tu solicitud y nuestro equipo se pondrá en
-            contacto contigo.
+            {t('contacto.parrafo')}
           </Text>
           <form onSubmit={handleSubmit}>
             <FormControl id="contact-form">
@@ -98,7 +97,7 @@ function Contacto() {
                     id="firstName"
                     name="firstName"
                     type="text"
-                    placeholder="Nombres"
+                    placeholder={t('contacto.nombres')}
                     bg="#1e1d1d"
                     color="white"
                     required
@@ -116,7 +115,7 @@ function Contacto() {
                     id="lastName"
                     name="lastName"
                     type="text"
-                    placeholder="Apellidos"
+                    placeholder={t('contacto.apellidos')}
                     bg="#1e1d1d"
                     color="white"
                     required
@@ -132,7 +131,7 @@ function Contacto() {
                   id="email"
                   name="_replyto"
                   type="email"
-                  placeholder="Email"
+                  placeholder={t('contacto.correo')}
                   bg="#1e1d1d"
                   color="white"
                   required
@@ -146,7 +145,7 @@ function Contacto() {
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Mensaje"
+                  placeholder={t('contacto.mensaje')}
                   bg="#1e1d1d"
                   color="white"
                   required
@@ -162,7 +161,8 @@ function Contacto() {
               >
                 <Box
                   p="2"
-                  mr="4"
+                  mr={{base: "0", sm: "4"}}
+                  mb={{base: "2", sm: "0"}}
                   borderRadius="md"
                   bg="#1e1d1d"
                   boxShadow="md"
@@ -184,7 +184,7 @@ function Contacto() {
                   boxShadow="md"
                   className="animate-top"
                 >
-                  Enviar
+                  {t('contacto.boton')}
                 </Button>
               </Flex>
             </FormControl>

@@ -1,6 +1,8 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 function ServicioPage() {
+  const { t } = useTranslation();
   const services = [
     {
       color: "#1e1d1d",
@@ -26,24 +28,20 @@ function ServicioPage() {
 
   const textos = [
     {
-      titulo: "Renderizado Fotorrealista:",
-      parrafo:
-        "Transformamos tus ideas en imágenes impactantes y detalladas, capturando cada matiz y textura para ofrecer una visión precisa y realista de tus proyectos.",
+      titulo: t('servicioPage.renderTitulo'),
+      parrafo: t('servicioPage.renderParrafo'),
     },
     {
-      titulo: "Visualización de Interiores:",
-      parrafo:
-        "Creamos representaciones detalladas y estilizadas de espacios interiores, ayudando a visualizar la disposición, iluminación y atmósfera para una planificación precisa y efectiva.",
+      titulo: t('servicioPage.visualTitulo'),
+      parrafo: t('servicioPage.visualParrafo'),
     },
     {
-      titulo: "Animaciones 3D:",
-      parrafo:
-        "Llevamos tus diseños a la vida con animaciones fluidas que muestran cada ángulo y detalle, permitiéndote explorar y presentar tus proyectos de manera dinámica y envolvente.",
+      titulo: t('servicioPage.animaTitulo'),
+      parrafo: t('servicioPage.animaParrafo'),
     },
     {
-      titulo: "Recorridos Virtuales:",
-      parrafo:
-        "Ofrecemos experiencias inmersivas mediante tours virtuales, permitiendo a los clientes caminar virtualmente por sus espacios futuros y experimentar el diseño antes de la construcción.",
+      titulo: t('servicioPage.recorTitulo'),
+      parrafo: t('servicioPage.recorParrafo'),
     },
   ];
 
@@ -84,7 +82,7 @@ function ServicioPage() {
             textShadow="2px 2px 8px rgba(0, 0, 0, 0.9)"
             className="changeText"
           >
-            SERVICIOS
+            {t('servicioPage.portada')}
           </Text>
         </Flex>
       </Flex>

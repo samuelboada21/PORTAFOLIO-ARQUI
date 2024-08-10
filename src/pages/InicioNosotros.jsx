@@ -6,8 +6,10 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 export default function InicioNosotros() {
+  const { t } = useTranslation();
   const isMdOrLarger = useBreakpointValue({ base: false, md: true });
 
   return (
@@ -72,7 +74,7 @@ export default function InicioNosotros() {
             fontWeight="bold"
             mb="2rem"
           >
-            En SWAG Arquitectos
+            {t("inicioNos.titulo")}
           </Text>
           <Text
             color="white"
@@ -80,7 +82,7 @@ export default function InicioNosotros() {
             fontWeight="bold"
             mb="1rem"
           >
-            Nos centramos en:
+            {t("inicioNos.lineaDos")}
           </Text>
           <Text
             maxW="300px"
@@ -90,8 +92,7 @@ export default function InicioNosotros() {
             fontWeight="bold"
             mb="2rem"
           >
-            Innovación, Detalle, Experiencia, Calidad, Inspiración,
-            Transformación.
+            {t("inicioNos.parametros")}
           </Text>
           <Button
             mt="4"
@@ -105,7 +106,7 @@ export default function InicioNosotros() {
             bg="#FFFFFF"
             onClick={() => (window.location.href = "/nosotros")}
           >
-            Conoce más
+            {t('inicioNos.boton')}
           </Button>
         </Flex>
       </Flex>

@@ -16,31 +16,32 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import Servicios from "../components/servicios";
+import Servicios from "../components/Servicios";
 import { FaPhone, FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
-
-const serviciosData = [
-  {
-    imagen: "./servicios/FotoRealista.png",
-    titulo: "Renderizado Fotorrealista",
-  },
-  {
-    imagen: "./servicios/TresD.png",
-    titulo: "Animaciones 3D",
-  },
-  {
-    imagen: "./servicios/Virtuales.png",
-    titulo: "Recorridos Virtuales",
-  },
-  {
-    imagen: "./servicios/Interiores.png",
-    titulo: "Visualización de Interiores",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Nosotros() {
+  const { t } = useTranslation();
+  const serviciosData = [
+    {
+      imagen: "./servicios/FotoRealista.png",
+      titulo: t("servicios.renderizado"),
+    },
+    {
+      imagen: "./servicios/TresD.png",
+      titulo: t("servicios.animaciones"),
+    },
+    {
+      imagen: "./servicios/Virtuales.png",
+      titulo: t("servicios.recorridos"),
+    },
+    {
+      imagen: "./servicios/Interiores.png",
+      titulo: t("servicios.visualizacion"),
+    },
+  ];
   const [w] = useMediaQuery("(min-width: 800px)");
   const { isOpen, onOpen, onClose: closeModal } = useDisclosure();
   const [selectedImage, setSelectedImage] = useState(null);
@@ -88,7 +89,7 @@ export default function Nosotros() {
             mb={4}
             color="rgba(0, 0, 0, 0.8)"
           >
-            SWAG - Arquitectos
+            {t('nosotros.portada')}
           </Text>
           <Text
             className="slide-in-right"
@@ -96,11 +97,7 @@ export default function Nosotros() {
             fontWeight="semibold"
             color="black"
           >
-            En Swag Arquitectos, nos enfocamos en la visualización
-            arquitectónica para crear espacios que inspiren y transformen.
-            Utilizamos tecnología avanzada en renders 3D, animaciones y realidad
-            virtual para materializar las visiones de nuestros clientes con
-            detalle y precisión.
+            {t('nosotros.portadaParrafo')}
           </Text>
         </Box>
       </Flex>
@@ -129,7 +126,7 @@ export default function Nosotros() {
             pt="70px"
             color={"white"}
           >
-            MOTOR DE RENDERIZADO
+            {t('nosotros.motorTitulo')}
           </Text>
           <Text
             fontSize={{ base: "sm", sm: "lg" }}
@@ -137,9 +134,7 @@ export default function Nosotros() {
             pt="30px"
             color={"white"}
           >
-            Swag Arquitectos utiliza motores de renderizado avanzados para
-            transformar modelos 3D en imágenes fotorrealistas, garantizando
-            precisión y calidad en cada proyecto.
+            {t('nosotros.motorParrafo')}
           </Text>
           <Box
             p={4}
@@ -327,7 +322,7 @@ export default function Nosotros() {
             mb="40px"
           >
             <Link _hover="none" href="/servicios">
-              Servicios
+              {t('servicios.boton')}
             </Link>
           </Button>
         </Flex>
@@ -344,65 +339,66 @@ export default function Nosotros() {
         // textAlign="center" // Centra el texto dentro de los boxes
       >
         <Box flex="1" boxShadow="md" p={4} m={10} textAlign="center">
-        <Image
-          src="./publico/PerfilFernando.jpg"
-          borderRadius="md"
-          mb="40px"
-          objectFit="contain"
-          width="170px"
-          height="170px"  // Asegura la misma altura para ambas imágenes
-          mx="auto"
-          className="service-image"
-          onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
-        />
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaUserCircle style={{ marginRight: "8px" }} />
-          <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO GUERRERO
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaLocationDot style={{ marginRight: "8px" }} />
-          Cúcuta, Colombia
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaPhone style={{ marginRight: "8px" }} />
-          +57 3204663151
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <MdEmail style={{ marginRight: "8px" }} />
-          <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
-        </Text>
-      </Box>
-      <Box flex="1" boxShadow="md" p={4} m={10} textAlign="center">
-        <Image
-          src="./publico/PerfilJulian.jpeg"
-          borderRadius="md"
-          mb="40px"
-          objectFit="contain"
-          width="170px"
-          height="170px"  // Asegura la misma altura para ambas imágenes
-          mx="auto"
-          className="service-image"
-          onClick={() => handleClickImage("./publico/PerfilJulian.jpeg")}
-        />
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaUserCircle style={{ marginRight: "8px" }} />
-          <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaLocationDot style={{ marginRight: "8px" }} />
-          Cúcuta, Colombia
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <FaPhone style={{ marginRight: "8px" }} />
-          +57 3004911084
-        </Text>
-        <Text display={"flex"} alignItems={"center"} color={"white"}>
-          <MdEmail style={{ marginRight: "8px" }} />
-          <Link href="mailto:julian.chaves.pabon@gmail.com">
-            julian.chaves.pabon@gmail.com
-          </Link>
-        </Text>
-      </Box>
+          <Image
+            src="./publico/PerfilFernando.jpg"
+            borderRadius="md"
+            mb="40px"
+            objectFit="contain"
+            width="170px"
+            height="170px" // Asegura la misma altura para ambas imágenes
+            mx="auto"
+            className="service-image"
+            onClick={() => handleClickImage("./publico/PerfilFernando.jpg")}
+          />
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaUserCircle style={{ marginRight: "8px" }} />
+            <strong style={{ marginRight: "5px" }}>ARQ:</strong> FERNANDO
+            GUERRERO
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaLocationDot style={{ marginRight: "8px" }} />
+            Cúcuta, Colombia
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaPhone style={{ marginRight: "8px" }} />
+            +57 3204663151
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <MdEmail style={{ marginRight: "8px" }} />
+            <Link href="mailto:fergue.35@gmail.com">fergue.35@gmail.com</Link>
+          </Text>
+        </Box>
+        <Box flex="1" boxShadow="md" p={4} m={10} textAlign="center">
+          <Image
+            src="./publico/PerfilJulian.jpeg"
+            borderRadius="md"
+            mb="40px"
+            objectFit="contain"
+            width="170px"
+            height="170px" // Asegura la misma altura para ambas imágenes
+            mx="auto"
+            className="service-image"
+            onClick={() => handleClickImage("./publico/PerfilJulian.jpeg")}
+          />
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaUserCircle style={{ marginRight: "8px" }} />
+            <strong style={{ marginRight: "5px" }}>ARQ:</strong> JULIAN CHAVES
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaLocationDot style={{ marginRight: "8px" }} />
+            Cúcuta, Colombia
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <FaPhone style={{ marginRight: "8px" }} />
+            +57 3004911084
+          </Text>
+          <Text display={"flex"} alignItems={"center"} color={"white"}>
+            <MdEmail style={{ marginRight: "8px" }} />
+            <Link href="mailto:julian.chaves.pabon@gmail.com">
+              julian.chaves.pabon@gmail.com
+            </Link>
+          </Text>
+        </Box>
         {selectedImage && (
           <Modal isOpen={isOpen} onClose={closeModal} isCentered>
             <ModalOverlay />

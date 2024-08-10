@@ -17,8 +17,10 @@ import { FaFacebook, FaInstagram, FaBars } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 import IconButtonReusable from "./IconButtonReusable";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const { t } = useTranslation();
   const [w] = useMediaQuery("(min-width: 900px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const location = useLocation();
@@ -61,7 +63,12 @@ function Navbar() {
             <Image src="./publico/HOR_WHITE.png" alt="Logo" w="120px" />
           </Link>
           <Link href="/">
-            <Image src="./publico/LogoJulian.png" alt="Logo" w="60px" ml="10px" />
+            <Image
+              src="./publico/LogoJulian.png"
+              alt="Logo"
+              w="60px"
+              ml="10px"
+            />
           </Link>
         </Flex>
         {!w && (
@@ -86,7 +93,7 @@ function Navbar() {
             color="white"
             textDecoration={location.pathname === "/" ? "underline" : "none"}
           >
-            Inicio
+            {t("navbar.inicio")}
           </Link>
           <Link
             href="/servicios"
@@ -96,7 +103,7 @@ function Navbar() {
               location.pathname === "/servicios" ? "underline" : "none"
             }
           >
-            Servicios
+            {t("navbar.servicios")}
           </Link>
           <Link
             href="/portafolio"
@@ -106,15 +113,17 @@ function Navbar() {
               location.pathname === "/portafolio" ? "underline" : "none"
             }
           >
-            Portafolio
+            {t("navbar.portafolio")}
           </Link>
           <Link
             href="/nosotros"
             m="0px 10px"
             color="white"
-            textDecoration={location.pathname === "/nosotros" ? "underline" : "none"}
+            textDecoration={
+              location.pathname === "/nosotros" ? "underline" : "none"
+            }
           >
-            Nosotros
+            {t("navbar.nosotros")}
           </Link>
           <Link
             href="/contacto"
@@ -124,7 +133,7 @@ function Navbar() {
               location.pathname === "/contacto" ? "underline" : "none"
             }
           >
-            Contacto
+            {t("navbar.contacto")}
           </Link>
         </Box>
       ) : (
@@ -163,7 +172,7 @@ function Navbar() {
                     bg: "rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  Inicio
+                  {t("navbar.inicio")}
                 </Link>
                 <Link
                   href="/servicios"
@@ -176,7 +185,7 @@ function Navbar() {
                     bg: "rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  Servicios
+                  {t("navbar.servicios")}
                 </Link>
                 <Link
                   href="/portafolio"
@@ -189,7 +198,7 @@ function Navbar() {
                     bg: "rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  Portafolio
+                  {t("navbar.portafolio")}
                 </Link>
                 <Link
                   href="/nosotros"
@@ -202,7 +211,7 @@ function Navbar() {
                     bg: "rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  Nosotros
+                  {t("navbar.nosotros")}
                 </Link>
                 <Link
                   href="/contacto"
@@ -215,7 +224,7 @@ function Navbar() {
                     bg: "rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  Contacto
+                  {t("navbar.contacto")}
                 </Link>
               </Flex>
             </DrawerBody>

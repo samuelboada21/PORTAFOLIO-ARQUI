@@ -2,12 +2,14 @@
 import { Flex, Box, Image, Text, SimpleGrid } from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-const servicios = ({ servicios }) => {
+const Servicios = ({ servicios }) => {
+  const { t } = useTranslation();
   return (
     <Flex m="30px 0px 30px 0px" direction="column" align="center" p={5}>
       <Text fontSize="3xl" fontWeight="bold" mb={5} color={"white"}>
-        Nuestros Servicios
+        {t('servicios.titulo')}
       </Text>
       <SimpleGrid columns={[1, 2, 2, 4]} spacing={10}>
         {servicios.map((servicio, index) => (
@@ -59,4 +61,4 @@ const ServicioCard = ({ servicio }) => {
   );
 };
 
-export default servicios;
+export default Servicios;

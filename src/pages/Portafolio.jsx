@@ -9,22 +9,25 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import CarpetaImagenes from "../components/CarpetaImagenes";
-
-const imagePaths = [
-  { src: "./RENDERS/EDIFICIO/e10.jpg", titulo: "EDIFICIO CEIBA CENTRAL",carpeta: "EDIFICIO",},
-  { src: "./RENDERS/ING_ECU/ie3.jpg", titulo: "CASA RG", carpeta: "ING_ECU",},
-  { src: "./RENDERS/HABI_NIÑA/hn4.jpg", titulo: "HABITACIÓN DE NIÑA",carpeta: "HABI_NIÑA",},
-  { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", titulo: "COCINA INTERIOR", carpeta: "COCINA_INTERIOR",},
-  { src: "./RENDERS/HABITACION/h6.jpg", titulo: "HABITACIÓN PRINCIPAL", carpeta: "HABITACION",},
-  { src: "./RENDERS/HABITACION2/hb1.jpg", titulo: "DORMITORIO", carpeta: "HABITACION2" },
-  { src: "./RENDERS/MAQUETA1/m11.png", titulo: "RENDER MAQUETA", carpeta: "MAQUETA1" },
-  { src: "./RENDERS/FACHADA/f2.jpg", titulo: "FACHADA PROYECTO F24", carpeta: "FACHADA" },
-  { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: "ZONA TV", carpeta: "ZONA_TVs" },
-  { src: "./RENDERS/SALA/s4.jpg", titulo: "SALA", carpeta: "SALA" },
-  { src: "./RENDERS/BBQ/b3.jpg", titulo: "ZONA BBQ", carpeta: "BBQ" },
-];
+import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {
+
+  const { t } = useTranslation();
+  const imagePaths = [
+    { src: "./RENDERS/EDIFICIO/e10.jpg", titulo: t('portafolio.edificio_ceiba_central'),carpeta: "EDIFICIO",},
+    { src: "./RENDERS/ING_ECU/ie3.jpg", titulo: t('portafolio.casa_rg'), carpeta: "ING_ECU",},
+    { src: "./RENDERS/HABI_NIÑA/hn4.jpg", titulo: t('portafolio.habitacion_nina'),carpeta: "HABI_NIÑA",},
+    { src: "./RENDERS/COCINA_INTERIOR/ci1.jpg", titulo: t('portafolio.cocina_interior'), carpeta: "COCINA_INTERIOR",},
+    { src: "./RENDERS/HABITACION/h6.jpg", titulo: t('portafolio.habitacion_principal'), carpeta: "HABITACION",},
+    { src: "./RENDERS/HABITACION2/hb1.jpg", titulo: t('portafolio.dormitorio'), carpeta: "HABITACION2" },
+    { src: "./RENDERS/MAQUETA1/m11.png", titulo: t('portafolio.render_maqueta'), carpeta: "MAQUETA1" },
+    { src: "./RENDERS/FACHADA/f2.jpg", titulo: t('portafolio.fachada_proyecto_f24'), carpeta: "FACHADA" },
+    { src: "./RENDERS/ZONA_TVs/zt5.png", titulo: t('portafolio.zona_tv'), carpeta: "ZONA_TVs" },
+    { src: "./RENDERS/SALA/s4.jpg", titulo: t('portafolio.sala'), carpeta: "SALA" },
+    { src: "./RENDERS/BBQ/b3.jpg", titulo: t('portafolio.zona_bbq'), carpeta: "BBQ" },
+  ];
+  
   const [selectedCarpeta, setSelectedCarpeta] = useState(null);
   const [selectedTitulo, setSelectedTitulo] = useState(null);
 
@@ -79,7 +82,7 @@ const Portfolio = () => {
             textShadow="2px 2px 8px rgba(0, 0, 0, 0.9)"
             className="changeText"
           >
-            PORTAFOLIO
+            {t('portafolio.portada')}
           </Text>
         </Flex>
       </Flex>

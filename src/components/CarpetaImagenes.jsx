@@ -15,6 +15,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { useTranslation } from "react-i18next";
 
 const carpetaImages = {
   COCINA_INTERIOR: [
@@ -101,6 +102,7 @@ const carpetaImages = {
 };
 
 const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
+  const { t } = useTranslation();
   const { isOpen, onOpen, onClose: closeModal } = useDisclosure();
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = carpetaImages[carpeta] || [];
@@ -129,7 +131,7 @@ const CarpetaImagenes = ({ titulo, carpeta, onClose }) => {
           {titulo.replace("_", " ").toUpperCase()}
         </Text>
         <Text as="button" onClick={onClose} color="blue.300">
-          Volver al portafolio
+          {t('carpetaImagen.volver')}
         </Text>
       </Box>
       {images

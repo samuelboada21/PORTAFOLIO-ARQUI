@@ -11,8 +11,10 @@ import {
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 import IconButtonReusable from "./IconButtonReusable";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   const [w] = useMediaQuery("(min-width: 900px)");
   const currentYear = new Date().getFullYear();
   const whatsappNumber = "573204663151";
@@ -83,10 +85,10 @@ function Footer() {
             </Flex>
             <Flex justifyContent="center" direction={"column"}>
               <Text textAlign="center" color="gray">
-                Todos los derechos reservados ©{currentYear}
+                {t('footer.derechos')} ©{currentYear}
               </Text>
               <Text textAlign="center" color="gray">
-                <strong>SWAG ARQUITECTOS</strong>
+                <strong>{t('footer.empresa')}</strong>
               </Text>
             </Flex>
           </GridItem>
@@ -153,10 +155,10 @@ function Footer() {
           </Flex>
           <Flex direction={"column"} alignItems="center">
             <Text textAlign="center" color="gray">
-              Todos los derechos reservados ©{currentYear}
+            {t('footer.derechos')} ©{currentYear}
             </Text>
             <Text textAlign="center" color="gray">
-              <strong>SWAG ARQUITECTOS</strong>
+              <strong>{t('footer.empresa')}</strong>
             </Text>
           </Flex>
         </Flex>

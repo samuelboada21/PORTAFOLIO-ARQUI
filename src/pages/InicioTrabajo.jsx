@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
 
 const images = [
   { src: "./RENDERS/EDIFICIO/e1.jpg", link: "/portafolio" },
@@ -20,6 +21,7 @@ const images = [
 ];
 
 export default function CardComponent() {
+  const { t } = useTranslation();
   const isSmOrLarger = useBreakpointValue({ base: false, md: true });
 
   const bgGradient = useBreakpointValue({
@@ -58,7 +60,7 @@ export default function CardComponent() {
       background={bgGradient}
     >
       <Heading as="h1" size={["xl", "2xl"]} mb="4" color="white">
-        PROYECTOS
+        {t('inicioTra.titulo')}
       </Heading>
       <Slider {...settings} style={{ width: "100%" }}>
         {images.map((image, index) => (
@@ -101,7 +103,7 @@ export default function CardComponent() {
         bg="#FFFFFF"
         onClick={() => (window.location.href = "/portafolio")}
       >
-        Más
+        {t('inicioTra.boton')}
       </Button>
     </Flex>
   );
