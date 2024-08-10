@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const servicios = ({ servicios }) => {
+const Services = ({ servicios }) => {
   const { t } = useTranslation();
   return (
     <Flex m="30px 0px 30px 0px" direction="column" align="center" p={5}>
@@ -61,4 +61,4 @@ const ServicioCard = ({ servicio }) => {
   );
 };
 
-export default servicios;
+export default Services;

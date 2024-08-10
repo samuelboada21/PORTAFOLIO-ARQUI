@@ -16,7 +16,7 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import Servicios from "../components/servicios";
+import Servicios from "../components/Services";
 import { FaPhone, FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
